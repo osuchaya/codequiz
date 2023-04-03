@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(207, 133, 247);
+}
+.welcome-section, .quiz-container, .score-container {
+    border-radius: 5px;
+    background-color: antiquewhite;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}

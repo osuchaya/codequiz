@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--Header section-->
+    <header class="header">
+
+        <h1>Code Quiz</h1>
+        <h2>Time on the clock</h2>
+        <h4 class="timer"></h4>
+    </header>
+    <section class="welcome-section">
+        <p>Welcome to the Code Quiz. Click the button to start.</p>
+        <button class="start-button">Start</button>
+    </section>
+ <!--Quiz section-->
+    <section class="quiz-container">
+        <h3 class="question-text"></h3>
+        <div class="answers-container">
+          
+
+         
+            <input type="radio" id="choice1" name="answer" value="1">
+            <label id="label1" for="choice1"></label><br>
+            <input type="radio" id="choice2" name="answer" value="2">
+            <label id="label2" for="choice2"></label><br>  
+            <input type="radio" id="choice3" name="answer" value="3">
+            <label id="label3" for="choice3"></label><br>
+            
+        </div>
+        <button id="next">Next</button>
+    </section>
+
+    <section class="score-container">
+        <h3 class="scorecount">0</h3>
+        
+
+    </section>
+    <aside><p>If you get a wrong answer, 10 seconds is taken off!</p></aside>
+
+    <div class="last-container">
+        <input class="userInput">
+        <button class="submit">Submit</button>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
