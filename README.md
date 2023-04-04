@@ -5,6 +5,9 @@ Visit the deployed site at https://osuchaya.github.com/codequiz
 Screenshot of deployed site:
 ![](images/codequizsite.png)
 
+## Code source
+The code is this application was written from scratch. There was no code source or starter code given.
+
 ## Technology Used 
 
 | Technology Used         | Resource URL           | 
@@ -13,7 +16,7 @@ Screenshot of deployed site:
 | CSS     | [https://developer.mozilla.org/en-US/docs/Web/CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)      |   
 | Git | [https://git-scm.com/](https://git-scm.com/)     |    
 | JavaScript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) |
-| Web API | [https://developer.mozilla.org/en-US/docs/Web/API] | (https://developer.mozilla.org/en-US/docs/Web/API) |
+| Web API |  https://developer.mozilla.org/en-US/docs/Web/API | (https://developer.mozilla.org/en-US/docs/Web/API) |
 
 ## Description
 
