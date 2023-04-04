@@ -1,13 +1,30 @@
 body {
-    background-color: rgb(207, 133, 247);
+    background-color: rgb(240, 232, 125);
 }
-.welcome-section, .quiz-container, .score-container {
+
+header {
+    align-content: center;
+}
+
+
+.quiz-container, .answers-container , .welcome-section {
+    margin: 0% 25% 5% 0%;
     border-radius: 5px;
     background-color: antiquewhite;
-    font-family: sans-serif;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
-    align-content: center;
+   
     padding-left: 10%;
     padding-right: 10%;
+    
+    border-width: 10px;
+    border-color: chocolate;
+}
+
+
+.start-button, #next {
+    font-size: larger;
+   
 }

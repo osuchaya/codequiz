@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>:::Code Quiz:::</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,10 +13,10 @@
 
         <h1>Code Quiz</h1>
         <h2>Time on the clock</h2>
-        <h4 class="timer"></h4>
+        <h4 class="timer"></h4><span>seconds</span>
     </header>
     <section class="welcome-section">
-        <p>Welcome to the Code Quiz. Click the button to start.</p>
+        <p>Welcome to the JavaScript Code Quiz. Click the button to start.</p>
         <button class="start-button">Start</button>
     </section>
  <!--Quiz section-->
@@ -37,17 +37,26 @@
         <button id="next">Next</button>
     </section>
 
+    
+
     <section class="score-container">
+        <span>Your Score : </span>
         <h3 class="scorecount">0</h3>
         
 
     </section>
-    <aside><p>If you get a wrong answer, 10 seconds is taken off!</p></aside>
+    <aside><p>Rule: If you get a wrong answer, 10 seconds is taken off!</p></aside>
 
     <div class="last-container">
+        <span>Record your initials here : </span>
         <input class="userInput">
-        <button class="submit">Submit</button>
+        <button class="submit">Submit</button>   
     </div>
+
+    <div class="scoreboard">
+        <ul id="scorelead"></ul>
+    </div>
+    
     <script src="./script.js"></script>
 </body>
 </html>

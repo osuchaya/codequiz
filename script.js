@@ -4,52 +4,38 @@ var timer;
 var currentQuestion = 0;
 var timeLeft = 60;
 var userArray = [];
-var scorecount = document.querySelector(".scorecount")
+
 let questions = [
     {
-        question: "What does html stand for?",
-        answers: ["hypnotext markup language", "hypertext markup language", "hypotext markup language"],
+        question: "In JavaScript, which keyword refers to an object?",
+        answers: ["That", "This", "Those"],
         correctAnswer: 2,
     },
 
     {
-        question: "what does css stand for?",
-        answers: ["cascading style sheet", "color style sheet", "copy style sheet"],
+        question: "How many equal signs denotes strictly equal in JavaScript?",
+        answers: ["3", "2", "1"],
         correctAnswer: 1,
     },
     {
-        question: "which of the programming language has name similar to island in Indonesia?",
-        answers: ["python", "perl", "java"],
+        question: "If you want to make a single line comment, how many / do you put in front of a code line?",
+        answers: ["None", "One", "Two"],
         correctAnswer: 3,
     },
 
     {
-        question: "how do you call a step that allows you to publish your code to a live site?",
-        answers: ["employment", "deployment", "imployment"],
+        question: "Which of these is used with Math.random() function to generate random integers?",
+        answers: ["Math.wall", "Math.floor", "Math.sink"],
         correctAnswer: 2,
     },
     {
-        question: "which of the following is NOT developer community forum",
-        answers: ["stackoverflow", "dev.to", "quora"],
+        question: "JavaScript is inserted between which tag in HTML?",
+        answers: ["price", "bag", "script"],
         correctAnswer: 3,
     },
 ]
 
-function showQuestion(questions) {
-    let titleDiv = document.getElementById(".question-text")
-    titleDiv.textContent = questions.question - text
-    let alts = document.querySelectorAll('.alternative')
-    console.log(alts);
-    alts.forEach(function (element, index) {
-        element.textContent = questions.alternatives[index];
-        element.addEventListener('click', function () {
-            if (questions.correctAnswer == index) {
-                alert("correct answer!");
 
-            } else { alert("wrong answer") }
-        })
-    })
-}
 var time = document.querySelector(".timer")
 var timeInterval;
 function countdown() {
@@ -71,14 +57,16 @@ function countdown() {
 function displayQuestions() {
     var questiontext = document.querySelector(".question-text");
     questiontext.textContent = questions[currentQuestion].question;
-    for (var i = 1; i <= 3; i++) {
-        var answerBtn = document.getElementById("label" + i);
-        answerBtn.textContent = questions[currentQuestion].answers[i - 1];
+    for (var i = 1; i <= 3; i++) {   //because radio id starts from 1
+        var answerBtn = document.getElementById("label" + i); //for subsequent labels(2,3)
+        answerBtn.textContent = questions[currentQuestion].answers[i - 1]; //since i variable starts from 1
+        //but array index starts from 0 and the answers start from 0 as answers = array
     }
 }
 
 function checkAnswers() {
     var radios = document.getElementsByName("answer");
+    var scorecount = document.querySelector(".scorecount");
     var userAnswer = 0;
     for (var i = 0; i < 3; i++) {
         if (radios[i].checked) {
@@ -90,7 +78,7 @@ function checkAnswers() {
     console.log(correctAnswer)
     if (userAnswer == correctAnswer) {
         score++;
-        scorecount.innerHTML=score
+        scorecount.innerHTML = score
     } else {
         if (timeLeft > 10) {
             timeLeft = timeLeft - 10;
@@ -129,9 +117,9 @@ window.onload = function () {
     })
 
     nextBtn.addEventListener("click", function () {
-
+        checkAnswers();
         if (questions.length > currentQuestion + 1) {
-            checkAnswers();
+
             currentQuestion = currentQuestion + 1;
             displayQuestions();
         } else {
@@ -148,7 +136,7 @@ window.onload = function () {
         lastContainer.style.display = "block";
         quizcontainer.style.display = "none";
         time.style.display = "none";
-        submitBtn.addEventListener("click",function(){
+        submitBtn.addEventListener("click", function () {
             console.log(userInput.value)
             console.log(score)
             var userInfo = {
@@ -157,20 +145,43 @@ window.onload = function () {
             }
             console.log(userInfo);
             userArray.push(userInfo);
-            localStorage.setItem("scores",JSON.stringify(userArray))
+            localStorage.setItem("scores", JSON.stringify(userArray))
+
+            var scorelead = document.getElementById("scorelead");
+            for (var i = 0; i < userArray.length; i++) {
+                var element = document.createElement("li")
+                element.innerText = userArray[i].name+" "+userArray[i].score
+                scorelead.appendChild(element)
+                console.log("created element")
+                scorelead.style.display = "block"
+        
+            }
         })
     }
     function getinfo() {
         var localStorageArray = JSON.parse(localStorage.getItem("scores"))
         console.log(localStorageArray)
-        if (localStorageArray!==null) {
-            userArray=localStorageArray
+        if (localStorageArray !== null) {
+            userArray = localStorageArray
         }
     }
+  
+
     getinfo()
 }
+
+
+
+
+
+
+
+
 //for loop around userArray that stores userscores then display them using ul
 //in HTML
+
+//
+
 
 /*target H3 and buttons : give them id in HTML so in JS use queryselector to target element.
 make variable
